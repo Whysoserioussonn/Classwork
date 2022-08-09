@@ -1,0 +1,152 @@
+
+Setup
+A. Inside classwork folder, create folder galaxyfarfaraway
+
+cd Classwork 
+mkdir galaxyfarfaraway
+
+B. create a flile inside galaxyfarfaraway folder called commands.txt
+
+touch commands.txt
+
+C. Paste work to each numbered question in commmands.txt
+
+ALL WORK INSIDE galaxyfarfaraway
+1. Create a directory called death_star, and make the following files in it: darth_vader.txt, princess_leia.txt , storm_trooper.txt
+
+cd Desktop
+cd Classwork
+cd galaxyfarfaraway
+mkdir death_star
+cd death_startouc
+touch darth_vader.txt
+touch princess_leia.txt
+touch storm_trooper.txt
+
+2. In galaxyfarfaraway folder, make a direcotry named tatooine and create the following files in it: luke.txt , ben_kenobi.txt
+
+cd ..
+mkdir tatooine
+cd tatooine
+touch luke.txt ben_kenobi.txt
+
+3. Inside of tatooine make a directory called millenium_falcon and in it create: han_solo.txt , chewbacca.txt
+
+mkdir millenium_falcon
+cd millenium_falcon/
+touch han_solo.txt chewbacca.txt
+
+PART II -rename
+
+4. Rename ben_kenobi.txt to obi_wan.txt
+
+cd ..
+mv ben_kenobi.txt obi_wan.txt
+
+Part III- copy
+
+5. Copy storm_trooper.txt from death_star to tatooine
+
+cd ../death_starcd
+cp storm_trooper.txt ../tatooine/
+
+
+PART IV -move
+
+6. Move luke.txt and obi_wan txt to the millenium_falcon
+
+cd ../tatooine/
+mv luke.txt obi_wan.txt millenium_falcon/
+
+7. Move millenium_falcon out of tatooine and into galaxyfarfaraway
+
+mv millenium_falcon ..
+
+8. Move millenium_falcon into death_star
+cd ..
+mv millenium_falcon death_star
+
+9. Move princess_leia.txt into millenium_falcon
+cd death_star
+mv princess_leia.txt millenium_falcon/
+
+PART V- remove
+
+10. Delete obi_wan.txt
+
+cd millenium_falcon/
+rm obi_wan.txt
+
+PART VI - ALL TOGETHER
+
+11. In galaxyfarfaraway, make directory called yavin_4
+
+cd ../..
+mkdir yavin_4
+
+12. Move the millenium_falcon out of the death_star and into yavin_4
+
+cd yavin_4
+mv ../death_star/millenium_falcon/ .
+
+or
+
+cd death_star
+mv millenium_falcon ../yavin_4
+
+13. Make a directory in yavin_4 called x_wing
+
+cd ../yavin_4
+mkdir x_wing
+
+
+14. Move princess_leia.txt to yavin_4 and luke.txt to x
+
+mv millenium_falcon/princess_leia.txt .
+mv millenium_falcon/luke.txt x_wing/
+
+15. Move the millenium_falcon and x_wing out of gavin_4 into galaxyfarfaraway
+
+mv millenium_falcon ..
+mv x_wing ..
+
+16. In death_star,create directories for tie_fighter_1 , tie_fighter_2 , tie_fighter_3
+
+cd ../death_star
+mkdir tie_fighter_1 tie_fighter_2 tie_fighter_3
+
+17. Move darth_vader.txt into tie_fighter_3
+
+mv darth_vader.txt tie_fighter_1/
+
+18. Make a copy of storm_trooper.txt in both tie_fighter_2 and tie_fighter_3
+
+cp storm_trooper.txt tie_fighter_2
+cp storm_trooper.txt tie_fighter_3
+
+19. Move all of the tie_fighters out fo the death_starr and into galaxyfarfaraway
+
+mv tie*
+
+PART VII- remove directories and everything they contain
+
+20. Remove tie_figher_2 and tie_fighter_3
+
+cd ..
+rm -r tie_fighter_2 tie_fighter_3
+
+PART VIII
+
+21. Touch a file in x_wing called the_force.txt
+
+cd x_wing/
+touch the_force.txt
+
+22. Destroy the death_star and anyone inside of it
+cd ..
+rm -r death_star
+
+23. Return x_wing and the millenium_falcon to yavin_4
+
+ mv x_wing millenium_falcon yavin_4
+
