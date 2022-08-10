@@ -143,10 +143,11 @@ cd x_wing/
 touch the_force.txt
 
 22. Destroy the death_star and anyone inside of it
+
 cd ..
 rm -r death_star
 
 23. Return x_wing and the millenium_falcon to yavin_4
 
- mv x_wing millenium_falcon yavin_4
+mv x_wing millenium_falcon yavin_4
 
