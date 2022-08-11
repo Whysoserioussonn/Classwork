@@ -182,5 +182,31 @@ break;
 default:
 console.log('do something else')
 break;
-
 }
+// Ternary operator
+// let lighting = "dark";
+// lighting === "dark" ? "It's dark" : "It's light";
+// console.log(lighting);
+
+// Exercise 1
+
+let letter = "A";
+
+switch (letter) {
+    case "A":
+    case "E":
+    case "I":
+    case "O":
+    case "U":
+        console.log(letter + " is a vowel");
+        break;
+    default:
+        console.log(Letter + " Is not a Vowel");
+        break;
+}
+// Exercise 2 Terenayr Operator
+
+let numberz = 3;
+
+oddEven = numberz % 2 === 0 ? "It's even" : "It's odd";
+console.log(oddEven);
