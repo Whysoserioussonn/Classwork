@@ -214,6 +214,34 @@ let primeCheckNumber;
    n++;
   }
 
+  // 3rd way to get prime numbers less than 20 using a formula 2n-1 and 2n+1
+
+  let z=1
+  let p=2
+while (p<=3)
+{
+if(p>1)
+   {
+     console.log(p)
+   } 
+   p++;
+}   
+while (z < 20) 
+
+{
+   
+   if (6*z-1>= 20)
+   {
+     break;
+   }
+   else
+   {
+     console.log(6*z-1)
+     console.log(6*z+1)
+   }
+   z++;
+}
+
   // Nando went to the vending machine to buy a cookie, The cookie costs $4.00. He paid with a $10 bill. 
   // the machine only gives change back in quarters, write a loop that shows
   // how many quarters he gets in return
