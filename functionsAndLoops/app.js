@@ -255,3 +255,42 @@ while (price<money)
     quarters++;
 }
 console.log(quarters)
+
+
+// write a while loop for the given output 10 30 50 70 90 20 40 60 80 100
+
+let q=-10;
+let r=0;
+while (q<90)
+{
+  if (q>89)
+  {
+    break;
+  }
+console.log(q=q+20)
+}
+while (r<100)
+{
+  if (r>99)
+  {
+    break;
+  }
+console.log(r=r+20)
+}
+
+// write a while loop that prints all the numbers from 500-800
+// only divisible by 4
+
+let s= 500;
+while (s<=800)
+{
+if ( s%4==0)
+{
+    console.log(s)
+}
+s++;
+}
+
+// Bonus Quetion 2. Nando wen to Uniglo and bought a shirt for 27.93.
+//He paid with 100 bill.Write a loop that prints out how many bills he 
+// recieved in large denominations as possile.
