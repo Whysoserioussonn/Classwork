@@ -294,3 +294,75 @@ s++;
 // Bonus Quetion 2. Nando wen to Uniglo and bought a shirt for 27.93.
 //He paid with 100 bill.Write a loop that prints out how many bills he 
 // recieved in large denominations as possile.
+
+//Output 1:
+
+1
+12
+123
+1234
+12345
+
+// think rows, its 5 rows and 5 columns
+// think as s as the row, start with 1 for first part
+// we know there are 5 rows for middle part
+//as long as the rows are lsss than the columms
+for (let s=1;s<=5;s++)
+{
+    let str = ""
+    for (let r=1;r<=s;r++)
+    {
+str+= r
+    }
+    console.log(str)
+}
+/*
+1:initialize the variable i to 1
+2: check if i (1) is less than equal to 3 (true)
+3: initialize the variable str as a blank String
+4:initializes the variable j to 1
+5: check if j (1) is less than or equal to i (true)
+6: concatenates 1 as a string to the variable str ("1")
+7: increment j by 1 (2)
+8: checks if j (2) is less than or equal to i (1) false
+9: print the str variable "1"
+10: increment i by 1 (2)
+11: check if i(2) is less than equal to 3 (true)
+12: initialize the variable string as a blank string, creating a new string
+13: initializes the variable j to 1, everything inside nested for loop gets wiped out and reset
+14: checks if j(1) is less than or equal to i(2) (true)
+15: concatenates 1 as a string to the variable str ("1")
+16: increment j by 1 (2)
+17: checks if j (2) is less than or equal i (2) true
+18: concatenates 2 as a string the variable str "1", so str is now "12"
+19: increments j by (3)
+20: checks if j (3) is less than or equal to i (2) false
+21: print str variable "12"
+22: increment i by 1(3)
+23: checks if i(3) is less than or equal to 3(true)
+24: initialize str variable to an empty string
+25: initializes j to 1
+26: check if j(1) is less than or equal to i(3) (true)
+27: concatenates 1 as a string to the variable str ("1")
+28: increment j by 1 (2)
+29: check if j(2) is less than or equal to i (3)(true)
+30: concatenates 2 as a string to the variable str("12")
+31: increment j by 1 (3)
+32: checks if j(3) is less than or equal to i (3)(true)
+33: concatenates 3 to the variable str ("123")
+34: increment j by 1(4)
+35 checks if j(4) is less than or equal to (3)(false)
+prints str variable("123")
+37: increment i by 1 (4)
+38: check if i (4) is less than or euqal to 3 (false), the outer loops fails
+39; finished.
+*/
+
+
+
+let learners =[24, 'Jade', true]
+
+// to change a value , we access by index
+learners[0] =4
+
+console.log(learners)
