@@ -55,6 +55,41 @@ function  add(...numbers)
 }
 add(2,3,4,56,77)
 
+
+// ARRAYS 
+  let ar =[3,10,15]
+  let firstName2 = "Bobby,Went,To,The, Mall."
+  let arrOfStrs = firstName2.split('.')
+  console.log(arrOfStrs)
+
+  let joinedStr = arrOfStrs.join(',')
+
+  console.log(joinedStr)
+
+
+
+  let fruit =['apple', 'banana' , 'peach']
+  fruit.splice(0,1)
+
+  console.log(fruit)
+
+  fruit.splice(1,0, 'BlueBerry', 'Watermellon')
+  console.log(fruit)
+
+  // SLICE
+
+  let fruit2 = fruit.slice()
+
+  console.log('fruit2 is ' + fruit2)
+
+  fruit2=fruit.slice(0,2)
+  console.log('new fruit2 is' + fruit2)
+
+  fruit2 =[...fruit]
+  console.log(fruit2)
+//STRINGS
+
+
 //LAB for FUNCTIONS and ARRAYS
 
 /*
@@ -124,10 +159,88 @@ console.log(isCharAVowel('m'));
 of numbers and returns the sum of those numbers. 
 For Example, sumArray([2,4,5]); would return 11.
 */
-const arr = [2, 4, 5];
+function sumArray(numbers) {
+  let output = 0
+  for (let i =0; i < numbers.length; i++) {
+      output +=numbers[i]
+  }
+  return output
+}
 
-const sumArray = arr.reduce((accumulator, value) => {
-  return accumulator + value;
-}, 0);
+console.log(sumArray([1,2,4]))
+/*
+5) Define a function, as a function declaration, multiplyArray that takes an array of numbers and returns
+the product those numbers.For Example, multiplyArray([2,4,5])*/
+/*
 
-console.log(sumArray);
+function multiplyArray(numbers) 
+{
+    let output = 1
+    for (let i =0; i < numbers.length; i++) {
+        output *=numbers[i]
+    }
+    return output
+}
+console.log(multiplyArray([2,2,4]))
+
+
+
+
+6) Define a function, as a function expression, numArgs that returns the number of arguments passed to 
+the function when called.*/
+function numArgs(...a) {
+  return a.length
+}
+console.log(numArgs(67,22,43,24))
+
+/*
+7) Define a function, as a function declaration, reverseString that takes a string, reverses the 
+the characters, and returns it. For example, reverseString('rockstar'); would return the string "ratskcor".
+*/
+
+function reverseString(x){
+  let output = []
+  for(let i=x.length; i>=0; i--) {
+      output.push(x[i])
+  }
+  return output.join('')
+}
+console.log(reverseString('Howdy Partner, This is Howser'))
+
+
+
+/*
+8) Define a function, as a function expression, longestStringInArray that takes an array of strings
+as an arguement and returns the length of the longest string
+*/
+
+function longestStringInArray(stringArray) {
+  let output = 0
+  for (let i=0; i< stringArray.length; i++){
+      if(stringArray[i].length > output) {
+          output = stringArray[i].length
+      }
+  }
+  return output
+}
+console.log(longestStringInArray(['Davie', 'Barbiedoll', 'Bob']))
+
+
+
+
+/*
+9) Define a function, as a function declaration, stringsLongerThan that takes an array of strings and
+a number as arguments; and returns an array of the strings that are longer than the number passed in.
+For Example, stringsLongerThan(['say', 'hello', 'in' 'the', 'morning'] 3); would return 
+["hello", "morning"].
+*/
+function stringsLongerThan(stringArray, z) {
+  let output = []
+  for (let i=0; i< stringArray.length; i++){
+      if(stringArray[i].length > z) {
+          output.push(stringArray[i])
+      }
+  }
+  return output
+}
+console.log(stringsLongerThan(['BabyBackRibs', 'Gin', 'Fabio'], 4))
