@@ -90,6 +90,28 @@ add(2,3,4,56,77)
 //STRINGS
 
 
+
+let foods = ['kimchi', 'soup', 'candy', 'fruit']
+
+//forEach (build-in array method)
+
+
+
+//callback function
+const myForEachFunction = function()
+  {
+
+  }
+
+
+
+
+
+
+
+
+
+
 //LAB for FUNCTIONS and ARRAYS
 
 /*
