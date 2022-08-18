@@ -1,3 +1,5 @@
+// Cat class
+
 class Cat
 {
 constructor(breed,furColor,age)
@@ -40,3 +42,6 @@ sofia.scratch()
 garfield.meow()
 garfield.attackbugs()
 garfield.scratch()
+
+
+//2) Pirate class
