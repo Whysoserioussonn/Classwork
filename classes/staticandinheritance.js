@@ -46,7 +46,7 @@ class Governor
         }
         driving() {
             return this.name +
-              " is driving mail truck";
+              " is driving the mail truck";
         }
         working() {
             return super.working() + ' delivering mail.';
@@ -64,3 +64,10 @@ class Governor
             return super.working() + ' on his tan at a tanning booth';
         }
     }
+
+    let p1 = new Postalworker("Bob", 35)
+    let p2 = new Postalworker("Beyonce", 25)
+    console.log(p1.working())
+    console.log(p2.driving())
+
+    
