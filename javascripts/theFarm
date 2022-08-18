@@ -1,0 +1,11 @@
+let animal = "cow"
+let secondAnimal= "fox";
+if (secondAnimal== 'cow')
+{
+console.log("moo")
+} 
+else 
+{
+    console.log("Hey!'You're not a cow!")
+}
+console.log(animal==secondAnimal)
