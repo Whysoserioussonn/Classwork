@@ -1,0 +1,10 @@
+//E. Drivers's Ed
+function checkAge(age) {
+    if (age>16){
+        console.log("Here are the keys!")
+    } else {
+        console.log("Sorry, you're too young.")
+    }
+}
+checkAge(33)
+checkAge(10)
