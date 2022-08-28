@@ -38,7 +38,7 @@ let newStr = 'Hello my name is ' + yourName;
 console.log(firstVar)
 console.log(newStr)
 
-// C Strings
+// C Booleans
 
 const a = 4;
 const b = 53;
@@ -287,7 +287,9 @@ if (num<100)
   console.log("big number")
 }
 
-                // G. Monkey in the Middle
+///////////////////////////////
+// G. Monkey in the Middle
+/////////////////////////////////
 
 Write an if...else ...else statement:
 1) console.log() little number if the number entered is < 5
@@ -307,8 +309,9 @@ else if (num > 10)
   console.log('monkey')
  }
 
-                // H Whats in Your Closet
-
+//////////////
+// H. Whats in Your Closet
+//////////////
 
 Below, we have given you examples of Kristens and Thom's closets modeled as data in JavaScript
 const kristynsCLoset =[
