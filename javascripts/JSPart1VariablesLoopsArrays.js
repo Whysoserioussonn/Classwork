@@ -269,10 +269,11 @@ myArray.reverse()
 console.log(myArray)
 Yes, the array was mutated
 Mutate the array means to alter the array
-The reverse method does not return a new list, it just reverses the same list
-.
-                F. Biggie Smalls
+The reverse method does not return a new list, it just reverses the same list.
 
+//////////////////////////////////////////////
+// F. Biggie Smalls
+/////////////////////////////////////////////
 
 Create a variable that contains an integer.
 Write an if ... else statement that:
@@ -287,9 +288,9 @@ if (num<100)
   console.log("big number")
 }
 
-///////////////////////////////
+//////////////////////////////////////
 // G. Monkey in the Middle
-/////////////////////////////////
+/////////////////////////////////////
 
 Write an if...else ...else statement:
 1) console.log() little number if the number entered is < 5
@@ -309,9 +310,9 @@ else if (num > 10)
   console.log('monkey')
  }
 
-//////////////
+////////////////////////////////////////////
 // H. Whats in Your Closet
-//////////////
+///////////////////////////////////////////
 
 Below, we have given you examples of Kristens and Thom's closets modeled as data in JavaScript
 const kristynsCLoset =[
@@ -387,10 +388,248 @@ A- thomsCloset[1][2] = "Footie Pajamas"
 
 
 
+/////////////////////////
+// FUNCTIONS
+//////////////////////
+
+A.printGreeting
+Do you think you can write a function called printGreeing with a parameter that returns a 
+greeting with the argument interpolated into the greeting?
+Like so?
+Example- 
+    console.log(printGreeting("Slimer"));
+Result-
+    Hello there, Slimer!
+
+You think you could? i think so too. Feel free to skip this problem b/c you already done it.
+Read entire problems carefully before doinog them from now on.     
+
+B. printCool
+
+Write a function 'printCool' that accepts one parameter, 'name' as an argument. The function
+should print the name and a message saying that person is cool.
+For example-
+ console.log(printCool("Captain Reynolds"))
+Result-
+  "Captain Reynolds is cool"
+
+A-
+const printGreeting = name => `Hello there ${name}`
+console.log(printGreeting('Captain Chunk'))
+
+C. calculateCube
+
+Write a function calculateCube that takes a single number and prints the volume of a cube
+from that number.
+For example-
+  console.log(calculateCube(5))
+Result-
+  125
+
+A-
+let calculateCube = cube => cube ** 3;
+console.log(calculateCube(3))
+
+D. isVowel
+
+Write a function isVowel that takes a charater (i.e a string of length 1) and returns true
+if it is a vowel, false otherwise. The vowel could be upper or lower case. Test your function
+on every vowel and make sure it is working. In general, when you write functions, take a 
+minute to test them with different values to make sure they behave the way you want them. 
+For Example-
+  console.log(isVowel("a"))
+Result-
+  true
+
+A-  
+ const isVowel = ch => 
+ {
+   return (ch == 'a'|| ch =='e' || ch=='i' || ch=='o' || ch=='u')
+ }
+console.log(isVowel('x'))
+console.log(isVowel('e'))
 
 
+E. getTwoLengths
+Write a function getTwoLengths that accepts two parameters(strings). The function should
+return an array of numbers where each number is the length of the corresponding string.
+For example-
+ console.log(getTwoLengths("Hank","Hippopopalous"));
+Result-
+ [4,13]
+
+ A-
+ const getTwoLengths = (str1, str2) => 
+{
+  const array = []
+  array.push(str1.length, str2.length)
+  return array
+}
+console.log(getTwoLengths('hi','there'))
+
+F. getMultipleLengths
+Write a function getMultipleLengths that accepts a single parameter as an arguement:
+an array of strings. The function should return an array of numbers where each number
+is the length of the corresponding string.
+For example-
+  console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]))
+Result-
+  [5,4,2,2,4]
+
+A-
+ const getMultipleLengths = item =>
+  {
+   const array = []
+   item.forEach(string => array.push(string.length))
+   return array
+ }
+ console.log(getMultipleLengths(['Its', 'lunch', 'time', 'arrivederci']))  
+
+G. maxOfThree
+Define a fucntion maxOfThree that takes tree numbers as arguments and returns the largest
+of them. If all numbers are the same, it doesnt matter which one is returned. If the two
+largest numbers are the same, one of them should be returned. Be sure to test it with 
+larger values in each of the three locations.
+For example=
+ console.log(maxOfThree(6,9,1))
+Result-
+ 9
+
+ A-
+ const maxOfThree = (num1,num2,num3) => 
+{
+    if(num1 >= num2 && num1 >= num3) return num1
+    else if (num2 >= num1 && num2 >= num3) return num2
+    else return num3
+}
+ console.log(maxOfThree(3, 1, 7))
+ console.log(maxOfThree(3, 8, 8))
+ console.log(maxOfThree(32, 133, 7))
+
+H. printLongestWord
+Write a function printLongestWord that accepts a single argument, an array of strings.
+The method should return the longest word in the array. in case of a tie, the method 
+should return the word that appears first in the array.
+For example-
+  console.log(printLongestWord(["Bojack", "Princess", "Diane" "a", "Max", "Peanutbutter", "big"]))
+Result-
+  Peanutbutter
+  
+A-
+function printLongestWord(arr)
+{
+  let longest = ''
+  for (let i = 0; i < arr.length; i++)
+  {
+    if (arr[i].length > longest.length)  longest = arr[i]
+  }
+  return longest
+}
+ console.log(printLongestWord(['Frodo', 'LadyOfTheWoods', 'Gandalf', 'Gimli']))
+
+ ///////////////////////////////
+ // Objects
+///////////////////////////////
+
+Lets set up an object data structure. Lets say we have a website that sells products,
+and we have a user of our website, and we want to store that user's data. The object
+data structure is a good way to organize the data from our user. 
+
+A. Make a user object
+
+1. Create an object called 'user'
+2. Write in to the object the key-value pairs for name, email, age, and purchased to
+an empty array []. Set the other values to whatever you would like.
 
 
+B. Update the user
 
+1. Our user has changed his or her email address. Without changing the original user
+object, update the email value to a new email address.
+2. Our user had a birthday! Without changing the original user object, increment
+the age value using the postfix operator. Hint: age++
+
+C. Adding keya and values
+You have decided to add your user's location to the data that you want to collect.
+
+1. Without changing the original user object, add a new key location to the object,
+and give it a value or some-or-the-other location (a string)
+
+D. Shopaholic!
+
+1. Our user has purchased an item! They have purchased some "carbohydrates". 
+Using .push(), add the string 'carbohydrates' to the 'purchased' array
+2. Our user has purchaed an item! They have purchased some "peace of mind"
+Using .push(), add the string "peace of mind" to the purchased array.
+3. Our user has purchaed an item! They have purchased some "Merino jodjpurs".
+Using .push(), add the string "Merino jodhpurs" to the purchased array
+4. Console.log just the "Merino jodhpurs" from the purchased array
+
+E. Object-within-object
+
+Remember that you can add an object to an existing object in the same way that you can 
+add any new property/value pair. If want to give our user a friend with a name and age,
+we could write: 
+user.friend= 
+{
+  name:"Grace Hopper",
+  age: 85
+}
+When we console.log user, we would see that the friend object added to our user object.
+
+1. Write a friend object into your user object and give the friend a name, age, location,
+and purchased array(empty for now)
+2. console.log just the friends name.
+3. console.log just the friends location.
+4. CHANGE the friends age to 55.
+5. The friend has purchased "The One Ring". Use .push() to add "The One Ring" to the
+friends purchased array.
+6. The friend has purchased "A latte". Use .push() to add "A latte" to the friends
+purchased array.
+7. console.log just "A latte" from the friends purchased array. 
+
+F. Loops
+
+1. Write a for loop tha iterates over the User's purachsed array (NOT the friends 
+  purchased array), and prints each element to the console. 
+2. Write a for loop that iterates over the Friends purchased array, and prints 
+each element to the console.
+
+G. Functions can operate on objects
+
+1. Write a single function updateUser that takes no parameters.
+2. When the function is run, it should increment the user age by 1 
+3. Make the user's name uppercase
+The function does not need a return statement, it will merely modify the user object.
+4. Write a function  oldAndLoud that performs the exact same tasks as updateUser, but
+instead of hard-coding it to only work on our user object, make it take a parameter 
+person, and have it modify the object that is passed in as an argument when the 
+function is called. Call your oldAndLoud function with user as the argument
+
+///////////////////////////////
+// Cat Combinator
+////////////////////////////////
+
+1. Mama cat
+- Define an object called cat1 that conatins the following properties:
+name, breed, age(a number)
+- console.log the cat's age
+- console.log the cat's breed
+
+2. Papa cat
+- Define an object called cat2 and also contains the properties:
+name, breed, age(a number)
+
+3. Combine Cats!
+The cats are multiplying!
+Write a function combineCats that has two parameters mama and papa. The function will
+take two arguments--each a cat object. 
+- Pass cat1 and cat2 as arguments to the combineCats function. The function should 
+console.log them.
+Example:
+  combineCats(cat1,cat2)
+Result:
+  {name: "Joe", age: 19, breed: "Mog"}  
+  {name: "Jam", age: 45, breed: "Siamese"}
 
 */
