@@ -1,0 +1,23 @@
+* {
+    /* height & width now includes border & padding */
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Helvetica;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row; /* default */
+    justify-content: flex-start; /* default */
+    height: 50px;
+    background-color: #a2cbb6;
+    font-size: 20;
+    margin: 10px;
+    color: #f3dba8;
+  }
+  nav > div:last-child {
+    margin-left: auto;
+  }

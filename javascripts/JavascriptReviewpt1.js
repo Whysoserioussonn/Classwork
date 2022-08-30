@@ -21,7 +21,7 @@ Defininig a function requires the function keyword followed by the name of the f
 
 6) What percentage of time should be spent thinking about how you going to solve a problem vs actually typing in code to solve it? 
 A. 90% understanding it, that involves planning ,testing to have a clear solution to avoid bug fixes in the future,
-*/
+
 
 //B.Strings
 //1) create a variable called firstVarible\
@@ -83,7 +83,7 @@ console.log(animal==secondAnimal)
             checkAge(10)
  
              
-/* II. Loops
+ II. Loops
 
         A) The basics
 1) Write a loop that will print out all the numbers from 0 to 10,inclusive.
@@ -606,12 +606,91 @@ instead of hard-coding it to only work on our user object, make it take a parame
 person, and have it modify the object that is passed in as an argument when the 
 function is called. Call your oldAndLoud function with user as the argument
 
+
+const user =
+{
+  name: 'Achilles',
+  age: 30,
+  email: 'forGreece@gmail.com',
+  purchased: [],
+}
+
+
+// Answer to B
+user.email = 'forTroy@gmail.com';
+user.age ++;
+console.log(user)
+
+
+//Answer to C
+user.location = "Greece"
+console.log(user)
+
+
+//Answer to D
+user.purchased.push('carbohydrates')
+user.purchased.push('piece of mind')
+user.purchased.push('Merino jodhpurs')
+console.log(user.purchased.pop())
+console.log(user)
+
+//Answer to E
+user.friend = { 
+   name: "Hector",
+   age: '32',
+   location: 'Troy',
+   purchased: []}
+console.log(user.friend.name)    
+console.log(user.friend.location)
+user.friend.age = 55
+user.friend.purchased.push("The One Ring")
+user.friend.purchased.push("A latte")
+console.log(user.friend.purchased[1])
+console.log(user.friend)
+
+
+// Answer to F us a "for loop"
+// this is the foreach method that also works
+//user.purchased.forEach(item => console.log(item))
+for (let i = 0; i < user.purchased.length; i++)
+ {
+ console.log(user.purchased[i] + "  ")
+ }
+
+for (let i = 0; i < user.friend.purchased.length; i++)
+ {
+ console.log(user.friend.purchased[i] + "  ")
+ }
+
+//Answer to G
+const updateUser = () =>
+ {
+  user.age++
+  user.name = user.name.toUpperCase()
+ }
+updateUser()
+console.log(user)
+
+
+const oldAndLoud = person => 
+{
+  console.log(person)
+  person.age++
+  person.name.toUpperCase()
+}
+
+oldAndLoud(user)
+console.log(user)
+
+*/
+
+/*
 ///////////////////////////////
 // Cat Combinator
 ////////////////////////////////
 
 1. Mama cat
-- Define an object called cat1 that conatins the following properties:
+- Define an object called cat1 that contains the following properties:
 name, breed, age(a number)
 - console.log the cat's age
 - console.log the cat's breed
@@ -632,4 +711,55 @@ Result:
   {name: "Joe", age: 19, breed: "Mog"}  
   {name: "Jam", age: 45, breed: "Siamese"}
 
+4. Cat brain bender
+
+If combineCats returns an object, and if combineCats takes objects as arguments, then it stands
+to reason that: catCombinator can use itself as its own argument.
+Take a second to stew on that....
+What is the rseult of console.log(combineCats(combineCats(cat1,cat2), combineCats(cat1,cat2)));
+The above console is TWO LEVELS deep of combineCats.
+-Write a console.log that is THREE LEVELS deep of combineCats. combineCats should have two arguments, each 
+with are combineCats, each which have two arguments, each which are combineCats.
+Your output should look something like:
+{name: 'JoeJamJoeJamJoeJamJoeJamJoeJam',
+age: 1,
+breed: -Mog-Siamese-Mog-Siamese-Mog-Siamese-Mog-Siamese'}
+
+A-  
+//1
+  cat1 =
+{
+  name: "Fluffy",
+  age: 7,
+  breed: 'Fatty'
+}
+
+//2
+cat2 = 
+{
+  name: 'Cookie',
+  age: 2,
+  breed: 'Siamese'  
+}
+//console.log(cat1)
+//console.log(cat2)
+
+//3
+ const combineCats = (cat1, cat2) => 
+ {
+   return {
+   name: `${cat1.name}${cat2.name}`,
+   age: 1,
+   breed: `${cat1.breed}-${cat2.breed}`,
+   }
+}
+console.log(combineCats(cat1, cat2))
+
+//4
+console.log(
+  combineCats(
+  combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)),
+  combineCats(combineCats(cat1, cat2), combineCats(cat1, cat2)),
+  )
+)
 */
