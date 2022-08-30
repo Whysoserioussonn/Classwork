@@ -22,19 +22,26 @@ body {
 }
 
 .two {
+    background-color: red;
+    grid-row: span 2;
+    grid-column: span 2;
 }
 
 .three {
 }
 
 .four {
+    background-color: blue;
+    grid-row: span 2;
 }
 
 .five {
+    grid-row: span 2;
 }
 
 .six {
 }
 
 .seven {
+    background-color: yellow;
 }

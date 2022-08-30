@@ -1,0 +1,38 @@
+body {
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+
+  }
+  
+  .box {
+   height: 200px;
+   width: 200px;
+   color: red;
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .box2
+  {
+    height: 30px;
+    width: 30px;
+    color: white;
+    background-color: yellowgreen;
+    display: flex;
+    justify-content: space-around;
+     align-items: center;
+     flex-direction: row;
+   }
+   .box3
+   {
+    height: 5px;
+    width: 5px;
+     background-color: blue;
+     justify-content: center;
+     align-items: center;
+   }

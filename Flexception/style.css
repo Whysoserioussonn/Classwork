@@ -1,0 +1,27 @@
+.flex-container {
+    
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: black;
+   
+    justify-content: space-around
+    
+  }
+  
+  .flex-container > div {
+    
+    background-color: #2e06bd;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    
+  }
+
+  body {
+    font-family: "Helvetica", Sans-Serif;
+    background-color: black;
+    align-items: center;
+  }
+  
