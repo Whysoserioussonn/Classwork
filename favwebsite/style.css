@@ -1,0 +1,44 @@
+body{
+    margin:0; /* gets rid of predetermined margins */
+    font-family: Arial, sans-serif;
+    font-size: 0.9em; /* em make it .9 the actual font size*/
+
+}
+a{
+    margin: 5px;
+    text-decoration: none;
+    color: black;
+
+}
+a:hover{
+    text-decoration: underline;
+}
+
+nav {
+    display: flex;/* display: flex makes a flex container that expands its
+                    items to fill available free space or shrinks them to
+                     prevent overflow */
+    justify-content: space-between;  /* space- between items are evenly
+                                    distributed in their container */
+
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    padding-left: 20px; /*decrease margin */
+    margin-right: 10px;
+
+}
+
+ul > a , ul> img /* selects all anchor tags directly within the ul tag*/
+{
+    padding: 0 8px; /* padding top and bottom to be 0 and 
+                    left and right to be 9px */
+
+}
+
+h1
+{
+    justify-content: center;
+}

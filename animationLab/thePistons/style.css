@@ -1,0 +1,21 @@
+
+.item1 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition-property: width;
+  transition-duration: 2s;
+}
+
+.item2 {
+    width: 100px;
+    height: 100px;
+    background: blue;
+    transition-property: width;
+    transition-duration: 2s;
+  }
+ 
+  div:hover {
+    width: 300px;
+    width: 300px;
+}

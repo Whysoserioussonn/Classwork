@@ -1,5 +1,6 @@
 body {
     background: lightslategray;
+   color: transparent;
 }
 
 .container {
@@ -10,6 +11,7 @@ body {
     grid-gap: 4px;
     grid-template-rows: 100px 100px 1fr 1fr;
     grid-template-columns: 80px 1fr 30px;
+    background-color: black;
 }
 
 .item {

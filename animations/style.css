@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    background-color: black;
+    height: 100vh;
+    color: white;
+}
+#container {
+    border: 1px solid grey;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.item {
+    width: 100px;
+    height: 50px;
+    border: 1px solid white;
+}
+.item:nth-child(even) {
+    background-color: rgb(56, 55, 53);
+}
+h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 50%;
+    color: black;
+    transition-property: color;
+    transition-duration: 5s;
+    transition-delay: 4s;
+}
+
+/*  ANIMATION RELATED BELOW */
+
+/*  TRANSITIONS  */
+
+/*  base class */
+
+.item-1 {
+    background-color: blue;
+    transition-property: background-color;
+    transition-duration: 3s;
+    transition-timing-function: ease;
+    transition-delay: 1s;
+}
+
+/* modifying class */
+.item-1:hover
+{
+    background-color: red;
+    width: 250px;
+}
+
+.item-2 {
+    transition: transform 500ms ease-in;
+}
+
+.item-2:hover{
+    transform: translate(50px);
+}
+
+.item3 {
+    transform: 2s ease-in;
+}
+
+.item-3:hover{
+    transform: rotate(30deg);
+}
+    
+//animations class
+
+.item-4:hover {
+    animation-name: growingtaller;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-delay: 100ms;
+
+/*short hand
+animation: growingtaller 500ms ease-in-out 100ms;*/
+
+
+@keyframes growingtaller
+{
+    from {
+        height: 50px;
+    }
+    to {
+        height: 500px;
+    }
+}
+
+}
