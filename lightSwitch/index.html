@@ -1,18 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>LightToggle</title>
-  <link rel = "stylesheet" href = "style.css">
-  <script defer src="script.js"></script>
-</head>
+<html>
+  <head>
+    <title>Lightbulb</title>
+<link rel="stylesheet" type"text/css" href="style.css">
+<script defer src="script.js"></script>
+  </head>
 <body>
-  <label>
-    <input type= "checkbox">
-    <span><ion-icon name="bulb-outline"></ion-icon></span>
-<div class = "bulb"></div>
-  </label>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <nav class="container">  
+
+    <div class = "box1" button id="btn" style="background-color: black; color: white"> OFF </button>
+    </div>
+
+    <div class = "box2">
+ <img id="Image" src="https://i.ibb.co/pjZGmHf/bulb-off.jpg"; >
+ 
+  </div>
+
+  <div class = "lastBox"
+	<p>Click ANYWHERE in BOX 1</p><br<
+  <p>Light Bulb Turns On</p><br<
+  <p>Text changes from OFF to ON</p><br<
+  <p>Text changes color from WHITE to YELLOW</p><br<
+  <p>Baclground changes from BLACK to WHITE</p><br<>
+
+  </div>
+</nav>
+
+
+	<script>
+
+  const btn = document.getElementById('btn');
+
+btn.addEventListener('click', function onClick(event) {
+  const backgroundColor = btn.style.backgroundColor;
+
+  if (backgroundColor === 'black') 
+  { btn.style.backgroundColor = 'green'; 
+  btn.style.color = 'yellow';
+}
+
+  else 
+  {
+    btn.style.backgroundColor = 'black';
+    btn.style.color = 'white';
+  } 
+  
+  
+ var image = document.getElementById('Image');
+
+//Match the image name
+//whether it is ONbulb or OFFbulb
+//change image to OFFbulb.jpg if
+//it match with ONbulb otherwise
+//change it to ONbulb.jpg -->
+if (image.src.match("bulb-on"))
+  image.src = "https://i.ibb.co/pjZGmHf/bulb-off.jpg";
+else
+  image.src = "https://i.ibb.co/68xzhnX/bulb-on.jpg";
+
+  const initialText = 'OFF';
+
+if (btn.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+  btn.textContent = ' ON';
+} else {
+  btn.textContent = initialText;
+}
+});  
+  
+  
+
+	</script>
+
+
+
+
 </body>
+
 </html>
