@@ -1,0 +1,9 @@
+form
+{
+    display: inline-block;
+}
+
+button{
+    border-radius: 5px;
+    padding: 4px;
+}
