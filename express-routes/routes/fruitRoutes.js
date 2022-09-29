@@ -4,42 +4,57 @@ const express = require('express')
 // Create a special router object for our routes
 const router = express.Router()
 
-// Load our fruits data
-const fruits = require('../models/fruits')
+// Loading our Model of fruit
+const Fruit = require('../models/fruit')
+
+// Bring in seed data
+const seed = require('../models/seed')
+
+// Bring in controller functions (destructure methods)
+const { 
+    findAllFruits, 
+    showNewView, 
+    createNewFruit,
+    seedStarterData,
+    showOneFruit,
+    showEditView,
+    updateOneFruit,
+    deleteOneFruit
+} = require('../controllers/fruitController')
+
+// Bring in controller object (with methods attached)
+// const fruitController = require('../controllers/fruitController')
+// Example: router.get('/', fruitController.findAllFruits)
+
+
+// I.N.D.U.C.E.S
+// Index, New, Delete, Update, Create, Edit, Show
 
 // Setup "index" route
-router.get('/', (req, res) => {  
-    res.send(fruits)
-})
+router.get('/', findAllFruits)
 
 // Setup "new" route
-router.get('/new', (req, res) => {     
-    res.send('<form>Create fruit</form>')
-})
-
-// Setup "create" route
-router.post('/', (req, res) => {
-    res.send('Creating a new fruit! (in DB)')
-})
-
-// Setup "show" route  
-router.get('/:index', (req, res) => {
-    res.send(fruits[req.params.index])
-})
-
-// Setup "edit" route
-router.get('/:index/edit', (req, res) => {
-    res.send('<form>Edit fruit</form>')
-})
-
-// Setup "update" route
-router.put('/:index', (req, res) => {
-    res.send('Updating a fruit at index! (in DB)')
-})
+router.get('/new', showNewView)
 
 // Setup "destroy" route
-router.delete('/:index', (req, res) => {
-    res.send('Deleting a fruit at index! (in DB)')
-})
+router.delete('/:id', deleteOneFruit)
+
+// Setup "update" route
+router.put('/:id', updateOneFruit)
+
+// Setup "create" route
+router.post('/', createNewFruit)
+
+// Setup "edit" route
+router.get('/:id/edit', showEditView)
+
+// Setup "seed" route
+router.get('/seed', seedStarterData)
+
+// Setup "show" route  
+router.get('/:id', showOneFruit)
+
+
+
 
 module.exports = router

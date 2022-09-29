@@ -1,22 +1,50 @@
 // Load express
 const express = require('express')
+// load mongoose
+const mongoose = require('mongoose');
+const methodOverride= require('method-override')
 
 // Bring in our packaged routes
 const fruitRoutes = require('./routes/fruitRoutes')
 const meatRoutes = require('./routes/meatRoutes')
 const vegetablesRoutes = require('./routes/vegetablesRoutes')
 
+// added for port
+require('dotenv').config()
 // Creates our express app (object)
 const app = express()
 
 // Identify our port
-const port = 3000
+const port = process.env.PORT
+//process.evn.MONGO_DB, need to install mongoose first, help with database connection and modals
 
+//setup view engine
+// app.set sets up config
+// app.engine specifies the file extention
+// second argument require('express-react-views) returns a view 
+// engine that we can use
+
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
+
+// use app.use(express.static("public")) for styling telling it that static files like css live inside out public folder
 // Middleware
-app.use('/api/fruits', fruitRoutes)
-app.use('/api/meat', meatRoutes)
-app.use('/api/vegetables', vegetablesRoutes)
+app.use(express.urlencoded({extended:false}))
+app.use(express.static("public"))
+app.use(methodOverride("_method")) // _method is what we will be using in the form
 
+
+app.use('/fruits', fruitRoutes)
+app.use('/meat', meatRoutes)
+app.use('/vegetables', vegetablesRoutes)
+
+
+mongoose.connect(process.env.MONGO_DB);
+mongoose.connection.once('open', () =>
+{
+    console.log('Connected to MongoDB')
+})
 
 // Listen to port
 app.listen(port, () => {

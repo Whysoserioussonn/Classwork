@@ -1,0 +1,31 @@
+body {
+    background-color: salmon;
+}
+
+#fruits-index
+{
+    font-size: 40px;
+}
+
+#vegetables-index
+{
+    font-size: 40px;
+}
+
+#meat-index
+{
+    font-size: 40px;
+}
+
+
+
+.top 
+{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    font-size: 30px;
+      
+}
