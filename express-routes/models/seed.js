@@ -27,7 +27,7 @@ const fruits = [
     }
 ];
 
-const meats = [ {
+const meat = [ {
     name:'steak',
     color: 'brown',
     readyToEat: true
@@ -81,6 +81,6 @@ const vegetables = [ {
 
 module.exports = {
     fruits,
-    meats,
+    meat,
     vegetables
 }

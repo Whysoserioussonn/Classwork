@@ -1,27 +1,37 @@
 const Meat = require('../models/meat')
 const seed = require('../models/seed')
 
-// index ROUTE     GET /meat    (index)
+// "index" ROUTE    GET /meat  Action(index)- Displaying a list of all things
+// Mongoose Function .find
 const findAllMeats = (req, res) => {  
+    // res.send(meat);
+    // res.render('meat/Index', {meat: meat})
+
     // Find takes two arguments:
     //   1st: an object with our query (to filter our data and find exactly what we need)
     //   2nd: callback (with an error object and the found data)
     Meat.find({}, (err, foundMeat) => {
-        if (err) {
+        if (err)
+         {
             res.status(400).json(err)
-        } else {
+         }
+         else
+         {
             res.status(200).render('meat/Index', { meat: foundMeat })
-        }
+         }
     })
 }
 
-// ROUTE      GET /meat/new    (new)
-const showNewView = (req, res) => {     
+// "new" ROUTE     GET /meat/new   Action(new)-Display HTML form for creating a new thing
+// Mongoose Function N/A
+const showNewView = (req, res) =>
+ {     
     // res.send('<form>Create meat</form>')
     res.render('meat/New')
-}
+ }
 
-// ROUTE     POST /meat     (create)
+// "create" ROUTE     POST /meat    Action(create)- Create a new thing
+// Mongoose Function .create
 const createNewMeat = (req, res) => {
     if (req.body.readyToEat === "on") {
         req.body.readyToEat = true
@@ -41,29 +51,58 @@ const createNewMeat = (req, res) => {
 }
 
 
-// ROUTE       GET /meat/seed      (seed)
-const seedStarterData = (req, res) => {
-    // Delete all remaining documents (if there are any)
-    Meat.deleteMany({}, (err, deletedMeats) => {
+// "seed" ROUTE   DELETE & GET /meat/seed    Action(destroy and create using GET not POST )
+// deletes old array and creates a replacement seed array
+// Mongoose Function .deleteMany and .create
+const seedStarterData = (req, res) =>
+     {
+            // Delete all remaining documents (if there are any)
+            Meat.deleteMany({}, (err, deletedMeats) =>
+             {
+                if (err)
+                {
+                    res.status(400).json(err)
+                } 
+                else 
+                {
+                    console.log('deleted data.')
+                    console.log(seed.meat)
+                    // Data has been successfully deleted
+                    // Now use seed data to repopulate the database
+                    Meat.create(seed.meat, (err, createdMeat) => 
+                    {
+                    if (err)
+                    {
+                    res.status(400).json(err)
+                    }
+                    else
+                    {
+                    res.status(200).redirect('/meat')
+                    }
+                    })
+                 }
+             })
+    }
+
+
+// "clearData" ROUTE      DELETE /meat/   Action(destroy)
+// Delete all of the documents that match conditions from the collection.Use {} to target everything
+// Mongoose function .deleteMany
+const clearData = (req, res) => {
+    Meat.deleteMany({}, (err, deletesAll) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            console.log('deleted data.')
-            console.log(seed.meat)
-            // Data has been successfully deleted
-            // Now use seed data to repopulate the database
-            Meat.create(seed.meat, (err, createdMeat) => {
-                if (err) {
-                    res.status(400).json(err)
-                } else {
-                    res.status(200).redirect('/meat')
-                }
-            })
+            res.status(200).redirect('/meat')
         }
     })
 }
 
-// ROUTE     GET /meat/:id     (show)
+
+
+
+// "show" ROUTE     GET /meat/:id     Action(show)-Display a specfic thing
+// Mongoose Function .findById
 const showOneMeat = (req, res) => {
     // findById accepts two arguments:
     //   1st: the id of the document in our database
@@ -78,7 +117,8 @@ const showOneMeat = (req, res) => {
 }
 
 
-// ROUTE      GET /meat/:id/edit     (edit)
+// "edit" ROUTE      GET /meat/:id/edit   Action(edit)- return an HTML form for editing a thing
+// Mongoose function .findById
 const showEditView = (req, res) => {
     Meat.findById(req.params.id, (err, foundMeat) => {
         if (err) {
@@ -89,7 +129,8 @@ const showEditView = (req, res) => {
     })
 }
 
-// ROUTE     PUT /meat/:id       (update)
+// "update" ROUTE     PUT /meat/:id       Action(update)- update a specific thing
+// Mongoose Function .findByIdAndUpdate
 const updateOneMeat = (req, res) => {
 
     if (req.body.readyToEat === "on") {
@@ -113,7 +154,8 @@ const updateOneMeat = (req, res) => {
 }
 
 
-// ROUTE       DELETE /meat/:id      (destroy)
+// "destroy" ROUTE     DELETE /meat/:id      Action(destroy)- delete a specific thing
+// Mongoose function .findByIdAndDelete
 const deleteOneMeat = (req, res) => {
     // console.log('in delete route')
     // res.send('Deleting a meat at index! (in DB)')
@@ -135,5 +177,6 @@ module.exports = {
     showOneMeat,
     showEditView,
     updateOneMeat,
-    deleteOneMeat
+    deleteOneMeat,
+    clearData
 }

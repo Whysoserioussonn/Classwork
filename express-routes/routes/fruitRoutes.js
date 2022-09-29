@@ -5,9 +5,11 @@ const express = require('express')
 const router = express.Router()
 
 // Loading our Model of fruit
+// moved const Fruit to controllers folder under fruitController.js
 const Fruit = require('../models/fruit')
 
 // Bring in seed data
+// moved const seed to controllers folder under fruitController.js
 const seed = require('../models/seed')
 
 // Bring in controller functions (destructure methods)
@@ -19,7 +21,8 @@ const {
     showOneFruit,
     showEditView,
     updateOneFruit,
-    deleteOneFruit
+    deleteOneFruit,
+    clearData
 } = require('../controllers/fruitController')
 
 // Bring in controller object (with methods attached)
@@ -50,6 +53,9 @@ router.get('/:id/edit', showEditView)
 
 // Setup "seed" route
 router.get('/seed', seedStarterData)
+
+// Setup "clearData" route to delete all docs.
+router.get('/clear', clearData)
 
 // Setup "show" route  
 router.get('/:id', showOneFruit)

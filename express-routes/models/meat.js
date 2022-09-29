@@ -6,8 +6,8 @@ const Schema = mongoose.Schema
 
 //create our Schema
 const meatSchema = new Schema({
-    name:{ type:String, required: true},
-    color: { type:String, required: true},
+    name: { type: String, required: true }, 
+    color: { type: String, required: true }, 
     readyToEat: Boolean
 })
 
