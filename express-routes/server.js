@@ -33,8 +33,10 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"))
 app.use(methodOverride("_method")) // _method is what we will be using in the form
-
-
+app.use(express.json()) // needed for parsing for POST and PUT requests
+                        /*Express provides you with middleware to deal with the (incoming) data (object) in the body of the request.
+                        app.use(express.json()) is a method inbuilt in express to recognize the incoming Request Object as a JSON Object. 
+                        This method is called as a middleware in your application using the code: app.use(express.json());*/   
 app.use('/fruits', fruitRoutes)
 app.use('/meat', meatRoutes)
 app.use('/vegetables', vegetablesRoutes)
